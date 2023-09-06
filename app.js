@@ -12,7 +12,8 @@ const app = express();
 app.use(
   cors({
     // origin: "http://localhost:5173", // Replace with your frontend's URL
-    origin: "https://awful-erin-bandanna.cyclic.app", // Replace with your frontend's URL
+    // origin: "https://awful-erin-bandanna.cyclic.app", // Replace with your frontend's URL
+    origin: ["https://awful-erin-bandanna.cyclic.app", "http://localhost:5173"], // Replace with your frontend's URL
     credentials: true,
     exposedHeaders: ["Content-Range"],
   })
