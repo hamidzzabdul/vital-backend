@@ -13,7 +13,8 @@ app.use(
   cors({
     // origin: "http://localhost:5173", // Replace with your frontend's URL
     // origin: "https://awful-erin-bandanna.cyclic.app", // Replace with your frontend's URL
-    origin: ["https://awful-erin-bandanna.cyclic.app", "http://localhost:5173"], // Replace with your frontend's URL
+    // origin: ["http://awful-erin-bandanna.cyclic.app/", "http://localhost:5173"], // Replace with your frontend's URL
+    origin: "*", // Replace with your frontend's URL
     credentials: true,
     exposedHeaders: ["Content-Range"],
   })
