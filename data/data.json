@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Microscope",
+    "description": "High-quality laboratory microscope for research and analysis."
+  },
+  {
+    "name": "X-Ray Machine",
+    "description": "Advanced X-ray machine for medical imaging and diagnostics."
+  },
+  {
+    "name": "Surgical Table",
+    "description": "Motorized surgical table for use in operating theaters and ICUs.",
+    "category": "Surgical, Theater, ICU",
+    "subcategory": "Surgical Equipment"
+  },
+  {
+    "name": "Ultrasound Scanner",
+    "description": "Portable ultrasound scanner for detailed imaging in maternity care.",
+    "category": "Maternity",
+    "subcategory": "Ultrasound"
+  },
+  {
+    "name": "Dental Chair",
+    "description": "Comfortable dental chair with integrated equipment for dental procedures.",
+    "category": "Dental",
+    "subcategory": "Dental Equipment"
+  },
+  {
+    "name": "Physiotherapy Table",
+    "description": "Adjustable physiotherapy table for patient rehabilitation exercises.",
+    "category": "Physiotherapy",
+    "subcategory": "Rehabilitation"
+  },
+  {
+    "name": "Hospital Bed",
+    "description": "Sturdy and adjustable hospital bed for patient comfort and care.",
+    "category": "General Hospital",
+    "subcategory": "Patient Care"
+  },
+  {
+    "name": "Laboratory Centrifuge",
+    "description": "Centrifuge machine for separating and analyzing laboratory samples.",
+    "category": "laboratory",
+    "subcategory": "Laboratory Equipment"
+  },
+  {
+    "name": "Dental X-Ray Unit",
+    "description": "Specialized X-ray unit for dental clinics and oral health assessment.",
+    "category": "Dental",
+    "subcategory": "Radiology"
+  },
+  {
+    "name": "ICU Ventilator",
+    "description": "Advanced ventilator system for intensive care units.",
+    "category": "Surgical, Theater, ICU",
+    "subcategory": "Ventilation"
+  }
+]
