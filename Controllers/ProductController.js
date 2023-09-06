@@ -5,6 +5,8 @@ const catchAsync = require("../utils/CatchAsync");
 const path = require("path");
 
 const factory = require("./HandlerFactory");
+const Category = require("../Models/Category");
+const Subcategory = require("../Models/SubCategory");
 
 const multerStorage = multer.diskStorage({
   filename: (req, file, cb) => {
@@ -53,6 +55,23 @@ exports.createProduct = catchAsync(async (req, res) => {
       },
     });
   }, 1000);
+});
+
+exports.getAllData = catchAsync(async (req, res, next) => {
+  const categories = await Category.find();
+  const products = await Product.find();
+  const subCategories = await Subcategory.find();
+  const data = {
+    categories,
+    subCategories,
+    products,
+  };
+  res.status(201).json({
+    status: "success",
+    data: {
+      data,
+    },
+  });
 });
 
 exports.getAllProducts = factory.getAll(Product);
