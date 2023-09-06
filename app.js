@@ -9,6 +9,13 @@ const categoryRouter = require("./routes/CategoryRoutes");
 
 const app = express();
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 app.use(
   cors({
     // origin: "http://localhost:5173", // Replace with your frontend's URL
