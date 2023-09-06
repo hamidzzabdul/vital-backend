@@ -27,6 +27,7 @@ const upload = multer({
 exports.uploadProductImage = (req, res, next) => {
   upload.single("image")(req, res, (err) => {
     if (err) {
+      console.error("Image upload error:", err);
       return res.status(400).json({
         status: "error",
         message: "Image upload failed",
@@ -45,7 +46,6 @@ exports.createProduct = catchAsync(async (req, res) => {
     tags: req.body.tags,
     productImage: req.file.path,
   };
-
   const newDoc = await Product.create(productData);
   setTimeout(() => {
     res.status(201).json({
