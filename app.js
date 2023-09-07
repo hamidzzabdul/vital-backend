@@ -18,8 +18,6 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    // origin: "http://localhost:5173", // Replace with your frontend's URL
-    // origin: "https://awful-erin-bandanna.cyclic.app", // Replace with your frontend's URL
     origin: [
       "https://awful-erin-bandanna.cyclic.app",
       // "http://vitalmediquip.co.ke",
