@@ -3,11 +3,11 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+const app = express();
+
 const productRouter = require("./routes/Allroutes");
 const subCategoryRouter = require("./routes/subCategoryRoutes");
 const categoryRouter = require("./routes/CategoryRoutes");
-
-const app = express();
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
