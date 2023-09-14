@@ -20,8 +20,8 @@ app.use(
   cors({
     origin: [
       "https://awful-erin-bandanna.cyclic.app",
-      // "http://vitalmediquip.co.ke",
-      "http://localhost:5173",
+      "http://vitalmediquip.co.ke",
+      // "http://localhost:5173",
     ], // Replace with your frontend's URL
     // origin: "*", // Replace with your frontend's URL
     credentials: true,
