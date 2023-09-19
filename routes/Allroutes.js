@@ -1,5 +1,5 @@
 const express = require("express");
-
+const cloudinary = require("../utils/cloudinary");
 const productController = require("../Controllers/ProductController");
 
 const router = express.Router();

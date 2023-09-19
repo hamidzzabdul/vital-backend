@@ -1,9 +1,14 @@
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
-
+const cloudinary = require("cloudinary").v2;
 const app = express();
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const productRouter = require("./routes/Allroutes");
 const subCategoryRouter = require("./routes/subCategoryRoutes");

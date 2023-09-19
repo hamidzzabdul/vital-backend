@@ -1,6 +1,6 @@
 const catchAsync = require("./../utils/CatchAsync");
 const APIFeatures = require("./../utils/ApiFeatures");
-
+const cloudinary = require("../utils/cloudinary");
 exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndDelete(req.params.id);
@@ -35,6 +35,7 @@ exports.deleteAll = (Model) =>
 
 exports.updateOne = (Model) =>
   catchAsync(async (req, res, next) => {
+    const cloudinaryRes = await cloudinary.handleUpload(req.file.buffer);
     const productData = {
       name: req.body.name,
       description: req.body.description,
@@ -44,7 +45,7 @@ exports.updateOne = (Model) =>
     };
     // Check if a file was uploaded
     if (req.file) {
-      productData.productImage = req.file.path || "";
+      productData.productImage = cloudinaryRes.url || "";
     }
     const doc = await Model.findByIdAndUpdate(req.params.id, productData, {
       new: true,
