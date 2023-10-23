@@ -9,18 +9,6 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-app.use(
-  cors({
-    origin: [
-      "https://awful-erin-bandanna.cyclic.app",
-      "https://awful-erin-bandanna.cyclic.app/api/v1/products",
-      "https://vitalmediquip.co.ke",
-      "http://localhost:5173",
-    ],
-    credentials: true,
-    exposedHeaders: ["Content-Range"],
-  })
-);
 
 const productRouter = require("./routes/Allroutes");
 const subCategoryRouter = require("./routes/subCategoryRoutes");
@@ -32,6 +20,18 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
+
+app.use(
+  cors({
+    origin: [
+      "https://awful-erin-bandanna.cyclic.app",
+      "https://vitalmediquip.co.ke",
+      "http://localhost:5173",
+    ],
+    credentials: true,
+    exposedHeaders: ["Content-Range"],
+  })
+);
 
 // set http headers
 
