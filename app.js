@@ -15,6 +15,7 @@ const subCategoryRouter = require("./routes/subCategoryRoutes");
 const categoryRouter = require("./routes/CategoryRoutes");
 
 app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Origin",
     "https://awful-erin-bandanna.cyclic.app"
