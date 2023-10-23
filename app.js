@@ -14,17 +14,6 @@ const productRouter = require("./routes/Allroutes");
 const subCategoryRouter = require("./routes/subCategoryRoutes");
 const categoryRouter = require("./routes/CategoryRoutes");
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://awful-erin-bandanna.cyclic.app"
-  );
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
-
 app.use(
   cors({
     origin: [
@@ -37,6 +26,12 @@ app.use(
     exposedHeaders: ["Content-Range"],
   })
 );
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 
 // set http headers
 
