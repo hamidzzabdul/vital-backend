@@ -39,7 +39,6 @@ exports.uploadProductImage = (req, res, next) => {
 };
 
 exports.createProduct = catchAsync(async (req, res) => {
-  console.log(req.file);
   const cloudinaryRes = await cloudinary.handleUpload(req.file.buffer);
   const productData = {
     name: req.body.name,
@@ -50,6 +49,7 @@ exports.createProduct = catchAsync(async (req, res) => {
     productImage: cloudinaryRes.url,
   };
   const newDoc = await Product.create(productData);
+  console.log(newDoc);
   setTimeout(() => {
     res.status(201).json({
       status: "success",

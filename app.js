@@ -28,7 +28,6 @@ app.use(
       "http://vitalmediquip.co.ke",
       "http://localhost:5173",
     ],
-    // origin: "*", // Replace with your frontend's URL
     credentials: true,
     exposedHeaders: ["Content-Range"],
   })
