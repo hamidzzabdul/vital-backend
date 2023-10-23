@@ -33,6 +33,10 @@ app.use(
     exposedHeaders: ["Content-Range"],
   })
 );
+headers.append(
+  "Access-Control-Allow-Origin",
+  "https://awful-erin-bandanna.cyclic.app"
+);
 
 // set http headers
 
