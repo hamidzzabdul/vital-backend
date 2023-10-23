@@ -9,29 +9,28 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-
-const productRouter = require("./routes/Allroutes");
-const subCategoryRouter = require("./routes/subCategoryRoutes");
-const categoryRouter = require("./routes/CategoryRoutes");
-
 app.use(
   cors({
     origin: [
       "https://awful-erin-bandanna.cyclic.app",
-      "https://vitalmediquip.co.ke/",
-      "https://vitalmediquip.co.ke/admin",
+      "https://vitalmediquip.co.ke",
       "http://localhost:5173",
     ],
     credentials: true,
     exposedHeaders: ["Content-Range"],
   })
 );
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
+
+const productRouter = require("./routes/Allroutes");
+const subCategoryRouter = require("./routes/subCategoryRoutes");
+const categoryRouter = require("./routes/CategoryRoutes");
+
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,DELETE");
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//   next();
+// });
 
 // set http headers
 
