@@ -6,27 +6,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// exports.handleUpload = async (file, folder) => {
-//   return new Promise((resolve, reject) => {
-//     cloudinary.uploader.upload(
-//       file,
-//       {
-//         resource_type: "auto",
-//         folder: folder,
-//       },
-//       (error, result) => {
-//         if (error) {
-//           reject(error);
-//         } else {
-//           resolve({
-//             url: result.url,
-//             id: result.public_id,
-//           });
-//         }
-//       }
-//     );
-//   });
-// };
 exports.handleUpload = async (fileBuffer, folder) => {
   return new Promise((resolve, reject) => {
     cloudinary.uploader.upload(
@@ -34,6 +13,7 @@ exports.handleUpload = async (fileBuffer, folder) => {
       {
         resource_type: "auto",
         folder: folder,
+        secure: true,
       },
       (error, result) => {
         if (error) {
